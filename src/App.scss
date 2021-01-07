@@ -1,3 +1,105 @@
+@import './styles/common.scss';
+
+$border: 1px solid #e1e1e1;
+
+@mixin font {
+  font-size: 24px;
+  color: #636363;
+}
+
+@mixin iconStyle {
+  width: 32px;
+  height: 32px;
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
 .App {
-  text-align: center;
+  @include flexJcAic;
+  width: 100wh;
+  height: 100vh;
+
+  .TodosTemplate {
+    @include flexJcAic;
+    flex-direction: column;
+    width: 600px;
+    margin: 12px auto;
+    padding: 16px;
+    background: #f5f5f5;
+    font-family: $font;
+
+    .todoTitle {
+      margin: 0 auto;
+      color: #eadddd;
+      font-size: 100px;
+      font-weight: 100;
+    }
+
+    .contentWrapper {
+      border: $border;
+      box-shadow: 2px 0 2px #e1e1e1, -2px 0 2px #e1e1e1;
+      background-color: white;
+
+      .TodoInput {
+        @include flexAic;
+        padding: 12px 12px 12px 4px;
+        width: 520px;
+        border-bottom: $border;
+        box-shadow: -2px 1px 2px #e1e1e1;
+
+        .inputIcon {
+          @include iconStyle;
+        }
+
+        input {
+          @include font;
+          margin-left: 16px;
+        }
+
+        ::placeholder {
+          font-style: italic;
+          color: #e8e8e8;
+        }
+      }
+
+      .TodoListItem {
+        @include flexJsAic;
+        padding: 12px 12px 12px 4px;
+        border-bottom: $border;
+
+        .activeIcon {
+          @include iconStyle;
+        }
+
+        .itemText {
+          @include font;
+          flex: 1;
+          margin-left: 16px;
+        }
+
+        .deleteIcon {
+          width: 24px;
+          height: 24px;
+          color: #a56263;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .TodosStatus {
+      @include flexJsAic;
+      padding: 8px;
+      font-size: 14px;
+      color: #636363;
+
+      .statusSortGroup {
+        @include flexJsAic;
+        flex: 0.5;
+
+        .statusSort {
+          padding: 4px;
+        }
+      }
+    }
+  }
 }

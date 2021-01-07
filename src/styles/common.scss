@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+$font: 'Roboto';
+
 * {
   margin: 0;
   padding: 0;
@@ -26,4 +29,10 @@
 @mixin flexJcsb {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin flexJsAic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
