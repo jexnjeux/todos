@@ -4,6 +4,8 @@ todos 웹 어플리케이션 구현
 
 ## 디자인
 
+![todosScreenshot](`/image/todoScreenshot.png`)
+
 ## 적용 기술
 
 - React
@@ -12,8 +14,10 @@ todos 웹 어플리케이션 구현
 
 ## Setup
 
-`$ npm install`
-`$ npm start`
+```
+$ npm install
+$ npm start
+```
 
 ## 구현기능
 
