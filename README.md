@@ -4,7 +4,7 @@ todos 웹 어플리케이션 구현
 
 ## 디자인
 
-![todosScreenshot](`/image/todoScreenshot.png`)
+<img width="604" alt="todosScreenshot" src="https://user-images.githubusercontent.com/68100358/104086486-cc8af780-529b-11eb-848f-b193aa5f8feb.png">
 
 ## 적용 기술
 
