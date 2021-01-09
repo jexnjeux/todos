@@ -7,11 +7,24 @@ $border: 1px solid #e1e1e1;
   color: #636363;
 }
 
+@mixin taskTextStyle {
+  @include font;
+  flex: 1;
+  margin-left: 16px;
+}
+
 @mixin iconStyle {
   width: 32px;
   height: 32px;
   color: #e6e6e6;
   cursor: pointer;
+}
+
+@mixin boxShadowStyle {
+  box-shadow: 1px 0 2px #e1e1e1, -1px 0 2px #e1e1e1;
+}
+
+@mixin statusMenuStyle {
 }
 
 .App {
@@ -35,70 +48,124 @@ $border: 1px solid #e1e1e1;
       font-weight: 100;
     }
 
-    .contentWrapper {
-      border: $border;
-      box-shadow: 2px 0 2px #e1e1e1, -2px 0 2px #e1e1e1;
-      background-color: white;
+    .container {
+      padding-bottom: 10px;
 
-      .TodoInput {
-        @include flexAic;
-        padding: 12px 12px 12px 4px;
-        width: 520px;
-        border-bottom: $border;
-        box-shadow: -2px 1px 2px #e1e1e1;
+      .contentWrapper {
+        background-color: white;
+        border: $border;
+        @include boxShadowStyle;
 
-        .inputIcon {
-          @include iconStyle;
+        .TodoInput {
+          @include flexAic;
+          width: 520px;
+          padding: 12px 12px 12px 4px;
+          border-bottom: $border;
+          box-shadow: -1px 1px 2px #e1e1e1;
+
+          .checkedAllIcon {
+            @include iconStyle;
+            color: #222222;
+          }
+
+          .checkAllIcon {
+            @include iconStyle;
+          }
+
+          input {
+            @include font;
+            width: 100%;
+            margin-left: 16px;
+          }
+
+          ::placeholder {
+            width: 100%;
+            color: #e8e8e8;
+            font-style: italic;
+          }
         }
 
-        input {
+        .TodoListItem {
+          @include flexJsAic;
           @include font;
-          margin-left: 16px;
+          padding: 12px 12px 12px 4px;
+          border-bottom: $border;
+
+          svg {
+            @include iconStyle;
+          }
+
+          input {
+            @include taskTextStyle;
+          }
+
+          .completedIcon {
+            color: #99cec2;
+          }
+
+          .activeText {
+            @include taskTextStyle;
+          }
+
+          .completedText {
+            @include taskTextStyle;
+            color: #e6e6e6;
+            text-decoration: line-through;
+          }
+
+          .deleteIcon {
+            width: 24px;
+            height: 24px;
+            color: #a56263;
+            cursor: pointer;
+          }
         }
 
-        ::placeholder {
-          font-style: italic;
-          color: #e8e8e8;
+        .TodosStatus {
+          @include flexJsAic;
+          padding: 8px;
+          color: #636363;
+          font-size: 14px;
+
+          .statusMenuGroup {
+            flex: 0.5;
+
+            ul {
+              @include flexJsAic;
+
+              .statusMenu {
+                padding: 2px 5px;
+                border: 1px solid white;
+              }
+
+              .selectedStatusMenu {
+                padding: 2px 5px;
+                border: 1px solid #f2e1e1;
+                border-radius: 4px;
+              }
+            }
+          }
         }
       }
 
-      .TodoListItem {
-        @include flexJsAic;
-        padding: 12px 12px 12px 4px;
-        border-bottom: $border;
-
-        .activeIcon {
-          @include iconStyle;
-        }
-
-        .itemText {
-          @include font;
-          flex: 1;
-          margin-left: 16px;
-        }
-
-        .deleteIcon {
-          width: 24px;
-          height: 24px;
-          color: #a56263;
-          cursor: pointer;
-        }
+      .bookEffectBottom {
+        position: absolute;
+        width: 508px;
+        height: 0.7em;
+        margin-left: 0.5em;
+        border: $border;
+        background: #ffffff;
+        @include boxShadowStyle;
       }
-    }
 
-    .TodosStatus {
-      @include flexJsAic;
-      padding: 8px;
-      font-size: 14px;
-      color: #636363;
-
-      .statusSortGroup {
-        @include flexJsAic;
-        flex: 0.5;
-
-        .statusSort {
-          padding: 4px;
-        }
+      .bookEffectMiddle {
+        position: absolute;
+        width: 514px;
+        height: 0.4em;
+        margin-left: 0.25em;
+        border: $border;
+        background: #ffffff;
+        @include boxShadowStyle;
       }
     }
   }

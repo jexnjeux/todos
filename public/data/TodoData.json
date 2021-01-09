@@ -1,7 +1,32 @@
 [
   {
     "id": 1,
-    "task": "todo1",
+    "task": "책 읽기",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "task": "핸드폰 충전하기",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "task": "화분에 물주기",
+    "completed": true
+  },
+  {
+    "id": 4,
+    "task": "책상 정리하기",
+    "completed": true
+  },
+  {
+    "id": 5,
+    "task": "초콜렛 구매하기",
+    "completed": true
+  },
+  {
+    "id": 6,
+    "task": "과제 제출하기",
     "completed": false
   }
 ]

@@ -1,21 +1,34 @@
 import React from 'react';
 
-const TodosStatus = () => {
+const TodosStatus = ({ todos, setTodos, navMenus, Menus, handleNavMenus }) => {
+  const clearTodo = () => {
+    setTodos((todos) => todos.filter((todo) => !todo.completed));
+  };
+
   return (
     <div className='TodosStatus'>
-      <div className='leftItems'>5 items left</div>
-      <div className='statusSortGroup'>
-        <a href='#' className='statusSort'>
-          All
-        </a>
-        <a href='#' className='statusSort'>
-          Active
-        </a>
-        <a href='#' className='statusSort'>
-          completed
-        </a>
+      <div>{todos?.filter((todo) => !todo.completed).length} items left</div>
+      <div className='statusMenuGroup'>
+        <ul>
+          {Object.keys(Menus).map((menu, i) => {
+            return (
+              <li key={i}>
+                <a
+                  href='#'
+                  name={menu}
+                  className={
+                    navMenus[menu] ? 'selectedStatusMenu' : 'statusMenu'
+                  }
+                  onClick={handleNavMenus}
+                >
+                  {menu}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      <a href='#' className=''>
+      <a href='#' onClick={clearTodo}>
         Clear completed
       </a>
     </div>
